@@ -1,0 +1,12 @@
+
+PROJECT: example
+SAMPLES: ["SRR23999230","SRR23999231","SRR23999232","SRR23999233"]
+GENOME: /home/reference/persea_americana_Avocado_pame.fa
+ANNOTATION: /home/reference/persea_americana_Avocado_pame.gtf
+INPUTPATH: /home/samples
+OUTPUTPATH: /home/example_01
+THREAD: "10"
+INFO: /home/configs/info.csv
+CONTROL: ["eco"]
+TREAT: ["endo"]
+SPECIES: Persea americana
