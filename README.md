@@ -1,4 +1,7 @@
 # transcript-analysis-workflow
+
+### Note:The transcriptome analysis workflow introduced here requires you to provide the reference genome of the species. If the transcriptome data of the species you are analyzing does not have a corresponding reference genome, please refer to [this workflow](https://github.com/siyinobelma/transcript-analysis-workflow-No-reference-genome)
+
 ## **1. Installation**
 
 **1.1 Install Docker**
