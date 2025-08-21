@@ -2,6 +2,11 @@
 
 ### Note:The transcriptome analysis workflow introduced here requires you to provide the reference genome of the species. If the transcriptome data of the species you are analyzing does not have a corresponding reference genome, please refer to [this workflow](https://github.com/siyinobelma/transcript-analysis-workflow-No-reference-genome)
 
+#### We have encapsulated two analysis workflows that require a reference genome. The workflow incorporating the HISAT2 software has been packaged into the Docker image ```siyinobelma/hisat-snake:1.2```, while the workflow with the STAR software is available as ```siyinobelma/star-snake:1.1```.
+
+#### After running both workflows on the same test dataset, we observed notable differences. The HISAT2-based workflow completed in just 56 minutes, whereas the STAR-based workflow took 168 minutes. In terms of differential gene expression analysis, the HISAT2 workflow identified 28,411 differentially expressed genes, with 1,816 showing significant differential expression. Among these significantly differentially expressed genes, 1,017 were upregulated and 799 were downregulated. In contrast, the STAR workflow detected 22,117 differentially expressed genes, with 1,788 being significantly differentially expressed. Of these, 764 genes were upregulated and 1,024 were downregulated. The discrepancies in runtime and differential gene expression analysis results between these two workflows underscore that different analysis tools and workflows can yield varying outcomes. This provides researchers with valuable insights when selecting a transcriptome analysis workflow, enabling them to choose the most suitable one based on their specific research needs. 
+#### Here, we take the usage process of ```siyinobelma/hisat-snake:1.2``` as the instruction document. The usage methods of the two sets of analysis procedures are the same, and users can choose according to their needs.
+
 ## **1. Installation**
 
 **1.1 Install Docker**
@@ -95,6 +100,6 @@ nohup snakemake -s run.py -j 6 &
 
 Example sequencing data source: *Persea americana* (ID 3435) - BioProject - NCBI (nih.gov) with the SRR numbers: "SRR23999230", "SRR23999231", "SRR23999232", "SRR23999233".
 
-Genome and annotation file source (Yang et al., 2024): bioinfor.kib.ac.cn:8080/download_data for *Persea americana* Download Version *T2T*.
+Genome and annotation file source (Yang et al., 2024): bioinfor.kib.ac.cn/download_data for *Persea americana* Download Version *T2T*.
 
 **Cite:** Yang, T., Cai, Y., Huang, T., Yang, D., Yang, X., Yin, X., Zhang, C., Yang, Y., & Yang, Y. A telomere-to-telomere gap-free reference genome assembly of avocado provides useful resources for identifying genes related to fatty acid biosynthesis and disease resistance . *Hortic Res*. 2024 Apr 22;11(7):uhae119. doi: 10.1093/hr/uhae119.
